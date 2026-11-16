@@ -1,0 +1,509 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retail Sales Analytics | Phase 1</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #243047;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #142b4a, #246b78);
+    color: white;
+    padding: 45px 8%;
+}
+
+header h1 {
+    font-size: clamp(27px, 4vw, 40px);
+    margin-bottom: 12px;
+}
+
+header p {
+    color: #dcecf1;
+    max-width: 750px;
+}
+
+nav {
+    background: white;
+    padding: 16px 8%;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e2e7ef;
+}
+
+nav a {
+    color: #17365d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #138477;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    margin-bottom: 8px;
+    color: #17365d;
+    font-size: 25px;
+}
+
+.description {
+    color: #69778c;
+    margin-bottom: 20px;
+}
+
+.hero-card, .card, .dataset, .step, .deliverable {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e5eaf1;
+    box-shadow: 0 4px 15px #182b4610;
+}
+
+.hero-card {
+    border-left: 5px solid #138477;
+}
+
+.hero-card h2 {
+    margin-bottom: 8px;
+    color: #17365d;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.card h3, .dataset h3 {
+    color: #17365d;
+    margin-bottom: 8px;
+}
+
+.card p, .dataset p, .step p, .deliverable p {
+    color: #69778c;
+    font-size: 14px;
+}
+
+.dataset {
+    border-top: 4px solid #278b83;
+}
+
+.dataset .number {
+    display: inline-block;
+    background: #e6f5f2;
+    color: #16766d;
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.step-number {
+    min-width: 35px;
+    height: 35px;
+    background: #e5effb;
+    color: #17365d;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.step h3 {
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #246b78;
+    background: #e8f4f5;
+    border-radius: 20px;
+    padding: 4px 10px;
+}
+
+.deliverables {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.search {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd5e2;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+footer {
+    text-align: center;
+    background: #142b4a;
+    color: #e2eaf4;
+    padding: 25px;
+    font-size: 14px;
+}
+
+@media (max-width: 850px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .deliverables {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .grid, .steps, .deliverables {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 35px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Retail Sales & Customer Analytics</h1>
+    <p>
+        Phase 1 — Excel Data Cleaning & Validation.
+        Preparing reliable retail datasets by identifying data
+        quality issues, standardizing records, and validating
+        information for future analysis.
+    </p>
+</header>
+
+<nav>
+    <a href="#overview">Overview</a>
+    <a href="#datasets">Datasets</a>
+    <a href="#cleaning">Cleaning Process</a>
+    <a href="#validation">Validation</a>
+    <a href="#deliverables">Deliverables</a>
+</nav>
+
+<main>
+
+    <section id="overview">
+        <div class="hero-card">
+            <h2>Project Overview</h2>
+            <p>
+                The objective of Phase 1 is to clean and validate
+                retail data exported from the company's ERP system.
+                Accurate data helps reduce reporting errors and
+                provides a reliable foundation for business analysis.
+            </p>
+            <span class="status">Phase 1: Excel Data Preparation</span>
+        </div>
+    </section>
+
+    <section id="datasets">
+        <h2 class="section-title">Project Datasets</h2>
+        <p class="description">
+            The eight datasets included in the Phase 1 project.
+            Search below to find a dataset.
+        </p>
+
+        <input
+            class="search"
+            type="text"
+            id="datasetSearch"
+            placeholder="Search datasets..."
+            aria-label="Search datasets"
+        >
+
+        <div class="grid" id="datasetGrid">
+
+            <article class="dataset">
+                <span class="number">DATASET 01</span>
+                <h3>Customers</h3>
+                <p>Customer information, email validation, missing phone numbers, duplicate IDs, age and text standardization.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 02</span>
+                <h3>Products</h3>
+                <p>Product information and inventory validation, including identification of negative stock.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 03</span>
+                <h3>Stores</h3>
+                <p>Store records, text consistency and data-quality checks.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 04</span>
+                <h3>Employees</h3>
+                <p>Employee records, text standardization and data-quality checks.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 05</span>
+                <h3>Orders</h3>
+                <p>Order records, order status analysis, date attributes and customer details.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 06</span>
+                <h3>OrderItems</h3>
+                <p>Order line-item records prepared for consistent reporting and analysis.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 07</span>
+                <h3>Payments</h3>
+                <p>Payment methods, payment statuses and payment success-rate analysis.</p>
+            </article>
+
+            <article class="dataset">
+                <span class="number">DATASET 08</span>
+                <h3>Returns</h3>
+                <p>Returned order records and return-reason analysis.</p>
+            </article>
+
+        </div>
+        <p class="description" id="searchResult" aria-live="polite"></p>
+    </section>
+
+    <section id="cleaning">
+        <h2 class="section-title">Data Cleaning Process</h2>
+        <p class="description">
+            The main activities specified in the Phase 1 requirements.
+        </p>
+
+        <div class="steps">
+
+            <div class="step">
+                <span class="step-number">01</span>
+                <div>
+                    <h3>Explore the Data</h3>
+                    <p>Review rows, columns, primary IDs and potential data errors.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">02</span>
+                <div>
+                    <h3>Format as Excel Tables</h3>
+                    <p>Organize the data into tables for easier filtering and analysis.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">03</span>
+                <div>
+                    <h3>Standardize Text</h3>
+                    <p>Remove unwanted spaces and hidden characters and standardize text.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">04</span>
+                <div>
+                    <h3>Validate Customer Data</h3>
+                    <p>Check email formats, missing phone numbers, duplicate IDs and ages.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">05</span>
+                <div>
+                    <h3>Validate Inventory</h3>
+                    <p>Flag invalid stock values and create a cleaned stock field without overwriting original values.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">06</span>
+                <div>
+                    <h3>Analyze Orders</h3>
+                    <p>Extract month, year and quarter and examine order statuses.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">07</span>
+                <div>
+                    <h3>Review Payments & Returns</h3>
+                    <p>Analyze payment methods, payment success and return reasons.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">08</span>
+                <div>
+                    <h3>Prepare Excel Reports</h3>
+                    <p>Use PivotTables, charts and dashboard elements to summarize the cleaned data.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="validation">
+        <h2 class="section-title">Data Validation & Analysis</h2>
+        <p class="description">
+            Phase 1 checks designed to improve data quality.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Customer Validation</h3>
+                <p>Email formats, missing contact details, duplicate IDs and age checks.</p>
+            </div>
+
+            <div class="card">
+                <h3>Inventory Validation</h3>
+                <p>Stock status, invalid stock counts and a cleaned stock field.</p>
+            </div>
+
+            <div class="card">
+                <h3>Order Analysis</h3>
+                <p>Delivered, Pending, Cancelled and Returned order statuses.</p>
+            </div>
+
+            <div class="card">
+                <h3>PivotTables & Charts</h3>
+                <p>Customer membership, gender, state, products, payments and returns.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="deliverables">
+        <h2 class="section-title">Phase 1 Deliverables</h2>
+        <p class="description">
+            The expected outputs of the Excel data cleaning and validation phase.
+        </p>
+
+        <div class="deliverables">
+
+            <div class="deliverable">
+                <h3>Cleaned Excel Files</h3>
+                <p>Cleaned datasets for the eight retail data tables.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Validation Columns</h3>
+                <p>Fields that help identify invalid or incomplete records.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Cleaning Log</h3>
+                <p>Documentation of cleaning activities and data-quality issues.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>PivotTables</h3>
+                <p>Summaries for customer, product, order, payment and return analysis.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Charts</h3>
+                <p>Visual summaries of important patterns in the cleaned data.</p>
+            </div>
+
+            <div class="deliverable">
+                <h3>Excel Dashboard</h3>
+                <p>KPI cards, charts and slicers for exploring the project data.</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Retail Sales & Customer Analytics</p>
+    <p>Phase 1 — Excel Data Cleaning & Validation</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("datasetSearch");
+const datasetCards = document.querySelectorAll(".dataset");
+const searchResult = document.getElementById("searchResult");
+
+searchInput.addEventListener("input", function () {
+    const searchText = this.value.toLowerCase();
+    let visibleCount = 0;
+
+    datasetCards.forEach(function (card) {
+        const matches = card.textContent
+            .toLowerCase()
+            .includes(searchText);
+
+        card.style.display = matches ? "" : "none";
+
+        if (matches) {
+            visibleCount++;
+        }
+    });
+
+    searchResult.textContent =
+        visibleCount + " of " + datasetCards.length + " datasets shown.";
+});
+</script>
+
+<!-- Project ZIP Download Link -->
+<section style="text-align:center; padding:30px;">
+  <h2>My Phase 1 Project</h2>
+  <p>Retail Sales & Customer Analytics</p>
+
+  <a href="C:\Users\NIHARA P\Desktop\Retail_Sales_Phase1_Submission.zip.zip" download
+     style="background:#2563eb; color:white; padding:12px 20px;
+     text-decoration:none; border-radius:8px; display:inline-block;">
+    Download Project ZIP
+  </a>
+</section>
+
+
+</body>
+</html>
